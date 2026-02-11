@@ -70,7 +70,7 @@ def get_context(conversation_id: str) -> str:
         if 'conn' in locals(): conn.close()
 
 
-def rewrite(query: str, context: str) -> str:
+def rewrite_query(query: str, context: str) -> str:
     prompt = f"""
 Your role is to act as an expert query rewriter.
 Your task is to rewrite the given <user_query> into a more concise, complete, and effective search query based on the provided <context>.
@@ -243,10 +243,11 @@ def rewrite(
     conversation_id: str = Form(...),
     query: str = Form(...)
 ):
-    print("MASUK")
-    print(conversation_id, " ", query)
+    print("conversation_id =", repr(conversation_id))
+    print("query =", repr(query))
+
     context = get_context(conversation_id)
-    rewritten = rewrite(query, context)
+    rewritten = rewrite_query(query, context)
     print("rewritten: ", rewritten)
 
     return rewritten
