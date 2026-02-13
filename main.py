@@ -80,8 +80,9 @@ RULES:
 2. DO NOT answer the user. DO NOT engage in conversation.
 3. ONLY output the rewritten query text.
 4. If no rewrite is needed, output the original <user_query>.
-5. Language: Bahasa Indonesia.
-6. PRESERVE TECHNICAL TERMS: Do not remove or over-abbreviate key technical terms (e.g., keep "General Overhaul" instead of just "GOH" if the full term adds clarity). Precision is more important than brevity.
+5. Do not translate or modify technical terms (e.g., "approval budget", "WP&B", document names, system names, or English terms commonly used in the industry).
+6. Language: Bahasa Indonesia.
+7. PRESERVE TECHNICAL TERMS: Do not remove or over-abbreviate key technical terms (e.g., keep "General Overhaul" instead of just "GOH" if the full term adds clarity). Precision is more important than brevity.
 
 <context>
 {context}
