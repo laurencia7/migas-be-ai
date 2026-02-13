@@ -73,7 +73,7 @@ def get_context(conversation_id: str) -> str:
 def rewrite_query(query: str, context: str) -> str:
     prompt = f"""
 Your role is to act as an expert query rewriter.
-Your task is to rewrite the given <user_query> into a more concise, complete, and effective search query based on the provided <context>.
+Your task is to rewrite the given <user_query> into a more a precise, specific, complete, and effective search query based on the provided <context>.
 
 RULES:
 1. If the <user_query> is just a greeting (like "halo", "hi", etc.), return the query as is or return the main topic from the context.
@@ -81,6 +81,7 @@ RULES:
 3. ONLY output the rewritten query text.
 4. If no rewrite is needed, output the original <user_query>.
 5. Language: Bahasa Indonesia.
+6. PRESERVE TECHNICAL TERMS: Do not remove or over-abbreviate key technical terms (e.g., keep "General Overhaul" instead of just "GOH" if the full term adds clarity). Precision is more important than brevity.
 
 <context>
 {context}
